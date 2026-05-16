@@ -258,7 +258,7 @@ RUNNING THE PROJECT
 Prerequisites:
   - Java 17+
   - Maven 3.8+
-  - MySQL 8+ running on port 3306 (password: Janu@0307)
+  - MySQL 8+ running on port 3306
   - RabbitMQ running on port 5672 (guest/guest)
 
 Start order:
