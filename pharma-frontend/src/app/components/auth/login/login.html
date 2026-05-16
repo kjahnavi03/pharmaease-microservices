@@ -1,0 +1,74 @@
+<div class="auth-split">
+
+  <!-- Left Panel: Branding -->
+  <div class="auth-left">
+    <div class="auth-left-inner">
+      <div class="brand">
+        <span class="brand-icon">💊</span>
+        <span class="brand-name">PharmaEase</span>
+      </div>
+      <div class="left-hero">
+        <h2>Welcome<br><span>Back!</span></h2>
+        <p>Your trusted online pharmacy — quality medicines delivered fast, prescriptions managed easily.</p>
+      </div>
+      <div class="left-pills">
+        <div class="pill-card">💊 500+ Medicines</div>
+        <div class="pill-card">🚚 24h Delivery</div>
+        <div class="pill-card">🔒 Secure Payments</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel: Form -->
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+
+      <h1>Sign in to your account</h1>
+      <p class="sub">Enter your credentials to continue</p>
+
+      @if (error) {
+        <div class="msg msg-error"><span>⚠️</span> {{ error }}</div>
+      }
+
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form">
+
+        <div class="field">
+          <label>Email address</label>
+          <div class="input-box">
+            <span class="ico">✉️</span>
+            <input id="email" type="email" [(ngModel)]="email" name="email"
+              placeholder="Email address" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <div class="input-box">
+            <span class="ico">🔒</span>
+            <input id="password" [type]="showPassword ? 'text' : 'password'"
+              [(ngModel)]="password" name="password"
+              placeholder="Password" required autocomplete="current-password" />
+            <button type="button" class="show-btn" (click)="showPassword = !showPassword">
+              {{ showPassword ? 'Hide' : 'Show' }}
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="loading">
+          @if (loading) {
+            <span class="spinner"></span> Signing in...
+          } @else {
+            Sign In
+          }
+        </button>
+      </form>
+
+      <div class="footer-links">
+        <p>Don't have an account? <a routerLink="/register">Create one</a></p>
+        <p>Want admin access? <a routerLink="/register-admin">Register as Admin</a></p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

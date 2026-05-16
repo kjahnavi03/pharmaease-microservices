@@ -1,0 +1,93 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🏥 Trusted Online Pharmacy</div>
+      <h1>Quality Medicines, <span class="gradient-text">Delivered Fast</span></h1>
+      <p>Get your medicines delivered to your doorstep. Quality products, expert care, and fast delivery — all in one place.</p>
+      <div class="hero-actions">
+        <a routerLink="/medicines" class="btn-hero-primary">
+          Browse Medicines <span>→</span>
+        </a>
+        @if (!auth.isLoggedIn()) {
+          <a routerLink="/register" class="btn-hero-secondary">Get Started</a>
+        }
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-features">
+        <div class="feature-box">
+          <div class="feature-icon">⏰</div>
+          <div class="feature-info">
+            <div class="feature-value">24/7</div>
+            <div class="feature-label">Available</div>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">👨‍⚕️</div>
+          <div class="feature-info">
+            <div class="feature-value">Expert</div>
+            <div class="feature-label">Pharmacists</div>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">📋</div>
+          <div class="feature-info">
+            <div class="feature-value">Easy</div>
+            <div class="feature-label">Prescription Upload</div>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">✅</div>
+          <div class="feature-info">
+            <div class="feature-value">Verified</div>
+            <div class="feature-label">Quality Assured</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-container">
+      <h2 class="section-title">Why Choose PharmaEase?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <h3>100% Authentic</h3>
+          <p>All medicines sourced directly from certified manufacturers and distributors.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Prescription Management</h3>
+          <p>Upload prescriptions digitally. Our pharmacists review and approve within hours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Express Delivery</h3>
+          <p>Same-day delivery available in select cities. Track your order in real-time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Secure Payments</h3>
+          <p>Pay via UPI, Card, or Cash on Delivery. All transactions are encrypted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  @if (!auth.isLoggedIn()) {
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Ready to get started?</h2>
+        <p>Join thousands of customers who trust PharmaEase for their healthcare needs.</p>
+        <div class="cta-actions">
+          <a routerLink="/register" class="btn-cta-primary">Create Free Account</a>
+          <a routerLink="/login" class="btn-cta-secondary">Sign In</a>
+        </div>
+      </div>
+    </section>
+  }
+</div>

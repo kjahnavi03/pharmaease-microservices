@@ -1,0 +1,231 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                  🐳 PHARMAEASE DOCKER QUICK START GUIDE                      ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 PREREQUISITES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Docker Desktop installed and running
+✅ 8GB RAM available
+✅ 10GB disk space free
+
+🚀 QUICK START (3 STEPS):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+METHOD 1: Using Batch Scripts (Easiest)
+────────────────────────────────────────────────────────────────────────────────
+1. Double-click: START-DOCKER.bat
+2. Wait 3-4 minutes
+3. Open browser: http://localhost:4200
+
+METHOD 2: Using Command Line
+────────────────────────────────────────────────────────────────────────────────
+1. Open terminal in project folder
+2. Run: docker-compose up -d
+3. Wait 3-4 minutes
+4. Open browser: http://localhost:4200
+
+⏱️ STARTUP TIME:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+First time:  5-10 minutes (building images)
+After that:  2-3 minutes (starting containers)
+
+🎯 HELPER SCRIPTS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+START-DOCKER.bat     → Start all services
+STOP-DOCKER.bat      → Stop all services
+CHECK-STATUS.bat     → Check if services are running
+VIEW-LOGS.bat        → View service logs
+
+📊 WHAT GETS STARTED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ 9 Backend Services (Spring Boot)
+   • Eureka Server (Service Registry)
+   • Config Server (Configuration)
+   • Gateway Service (API Gateway)
+   • Auth Service (Authentication)
+   • Catalog Service (Medicines)
+   • Order Service (Orders)
+   • Admin Service (Admin Panel)
+   • Payment Service (Payments)
+   • Notification Service (Emails)
+
+✅ 1 Frontend (Angular + Nginx)
+   • Pharma Frontend
+
+✅ 3 Infrastructure Services
+   • MySQL 8.0 (Database)
+   • RabbitMQ (Message Queue)
+   • Zipkin (Distributed Tracing)
+
+Total: 13 Containers
+
+🌐 ACCESS URLS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Frontend:       http://localhost:4200
+Eureka:         http://localhost:8761
+Gateway:        http://localhost:8888
+RabbitMQ:       http://localhost:15672 (guest/guest)
+Zipkin:         http://localhost:9411
+
+🔑 DEFAULT CREDENTIALS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RabbitMQ:  guest / guest
+MySQL:     root / Janu@0307
+App User:  balajiparise500@gmail.com / (your password)
+
+💻 ESSENTIAL COMMANDS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Start all:          docker-compose up -d
+Stop all:           docker-compose stop
+Restart all:        docker-compose restart
+View status:        docker-compose ps
+View logs:          docker-compose logs -f
+Rebuild:            docker-compose up -d --build
+Clean up:           docker-compose down
+
+View specific logs: docker-compose logs -f service-name
+Restart service:    docker-compose restart service-name
+
+✅ VERIFICATION CHECKLIST:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+After starting, verify:
+
+□ Run: docker-compose ps
+  → All 13 containers show "Up" status
+
+□ Open: http://localhost:8761
+  → Eureka shows all 6 services registered
+
+□ Open: http://localhost:4200
+  → Frontend loads successfully
+
+□ Try login
+  → Can login with your credentials
+
+□ Browse medicines
+  → Medicines list loads
+
+🔧 TROUBLESHOOTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: Services not starting
+Solution: Wait 3-4 minutes, check logs
+
+Problem: Port already in use
+Solution: Stop other services using that port
+          Or change port in docker-compose.yml
+
+Problem: Out of memory
+Solution: Increase Docker memory in Docker Desktop settings
+          Settings → Resources → Memory → 8GB
+
+Problem: Frontend shows 404
+Solution: docker-compose restart pharma-frontend
+          Clear browser cache
+
+Problem: Services not in Eureka
+Solution: Wait 2 minutes for registration
+          Check: docker-compose logs eureka-server
+
+Problem: Cannot connect to database
+Solution: Check MySQL is running
+          docker-compose logs mysql
+
+📝 COMMON TASKS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+View all logs:
+  docker-compose logs
+
+View specific service logs:
+  docker-compose logs auth-service
+  docker-compose logs order-service
+  docker-compose logs pharma-frontend
+
+Follow logs in real-time:
+  docker-compose logs -f gateway-service
+
+Restart a service:
+  docker-compose restart auth-service
+
+Rebuild after code changes:
+  docker-compose up -d --build auth-service
+
+Access MySQL:
+  docker exec -it pharmacy-mysql mysql -uroot -p"Janu@0307"
+
+Check resource usage:
+  docker stats
+
+🗄️ DATA MANAGEMENT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Import data from local MySQL:
+  ./migrate-all-data.bat
+
+Import users:
+  ./import-users-to-docker.bat
+
+Import medicines:
+  ./import-all-medicines.bat
+
+Import orders:
+  ./compare-and-import-orders.bat
+
+⚠️ IMPORTANT NOTES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ DO:
+  • Use docker-compose stop to stop services
+  • Use docker-compose down to remove containers
+  • Wait 3-4 minutes for all services to start
+  • Check Eureka dashboard to verify services
+
+❌ DON'T:
+  • Don't use docker-compose down -v (deletes data!)
+  • Don't stop Docker Desktop while services are running
+  • Don't change ports while containers are running
+
+🎓 LEARNING RESOURCES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Detailed Guide:     HOW-TO-RUN-WITH-DOCKER.md
+Docker Concepts:    DOCKER-EXPLAINED.md
+Docker Commands:    DOCKER-CHEAT-SHEET.md
+Complete Guide:     COMPLETE-DOCKER-GUIDE.md
+
+🆘 NEED HELP?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Check logs: docker-compose logs service-name
+2. Check status: docker-compose ps
+3. Read: HOW-TO-RUN-WITH-DOCKER.md
+4. Run: CHECK-STATUS.bat
+
+📞 QUICK REFERENCE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Start:    START-DOCKER.bat  or  docker-compose up -d
+Stop:     STOP-DOCKER.bat   or  docker-compose stop
+Status:   CHECK-STATUS.bat  or  docker-compose ps
+Logs:     VIEW-LOGS.bat     or  docker-compose logs -f
+
+🎉 SUCCESS!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If you see:
+✅ All containers "Up" in docker-compose ps
+✅ Services registered in Eureka (http://localhost:8761)
+✅ Frontend loads (http://localhost:4200)
+
+Then your PharmaEase application is running successfully! 🚀
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Created: May 5, 2026
+Project: PharmaEase - Quality Medicines, Delivered Fast
+Docker Compose Version: 3.8
+
+╚══════════════════════════════════════════════════════════════════════════════╝

@@ -1,0 +1,87 @@
+# =============================================
+# JAVA / MAVEN - Build Output
+# =============================================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven wrapper (optional - keep if you want)
+# !.mvn/wrapper/maven-wrapper.jar
+
+# =============================================
+# SPRING BOOT - Local Config & Secrets
+# =============================================
+application-local.properties
+application-local.yml
+*.env
+.env
+secrets.properties
+
+# =============================================
+# ECLIPSE / STS IDE Files
+# =============================================
+.metadata/
+.settings/
+.classpath
+.project
+*.prefs
+.sts4-cache/
+
+# =============================================
+# IntelliJ IDEA
+# =============================================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# =============================================
+# VS Code
+# =============================================
+.vscode/
+
+# =============================================
+# ANGULAR FRONTEND - Node Modules & Build
+# =============================================
+pharma-frontend/node_modules/
+pharma-frontend/dist/
+pharma-frontend/.angular/
+
+# =============================================
+# LOGS
+# =============================================
+logs/
+*.log
+
+# =============================================
+# SQL Data Dumps (local personal data)
+# =============================================
+local-admin-export.sql
+local-auth-export.sql
+local-catalog-export.sql
+local-medicines-export.sql
+local-order-export.sql
+local-order-items-only.sql
+local-order-schema.sql
+local-orders-export.sql
+local-orders-only.sql
+local-payment-export.sql
+local-users-export.sql
+docker-order-data-backup.sql
+
+# =============================================
+# OS Files
+# =============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =============================================
+# SonarLint
+# =============================================
+.sonarlint/

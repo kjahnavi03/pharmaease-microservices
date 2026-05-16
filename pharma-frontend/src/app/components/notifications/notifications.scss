@@ -1,0 +1,124 @@
+.notifications-page {
+  padding-top: 70px;
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+.page-header {
+  background: #4299e1;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #3182ce;
+
+  .header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    h1 { color: white; font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem; }
+    p  { color: rgba(255,255,255,0.95); margin: 0; }
+  }
+}
+
+.notifications-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  span { font-size: 4rem; display: block; margin-bottom: 1rem; }
+  h2 { color: #2d3748; font-size: 1.5rem; margin: 0 0 0.5rem; }
+  p  { color: #718096; margin: 0 0 1.5rem; }
+}
+
+.btn-shop {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #4299e1;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s;
+  &:hover { background: #3182ce; }
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notif-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &:hover { border-color: #cbd5e0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+
+  &.notif-success { border-left: 3px solid #48bb78; }
+  &.notif-error   { border-left: 3px solid #f56565; }
+  &.notif-info    { border-left: 3px solid #4299e1; }
+  &.notif-default { border-left: 3px solid #cbd5e0; }
+
+  .notif-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+}
+
+.notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+
+  .notif-title {
+    color: #2d3748;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .notif-time {
+    color: #a0aec0;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+.notif-message {
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.notif-link {
+  color: #4299e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+.spinner-large {
+  width: 44px; height: 44px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #4299e1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

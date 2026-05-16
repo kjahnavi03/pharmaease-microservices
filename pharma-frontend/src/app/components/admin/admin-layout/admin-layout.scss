@@ -1,0 +1,224 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+// ── Sidebar ────────────────────────────────────────────────────────────────
+.admin-sidebar {
+  width: 260px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.admin-layout.sidebar-collapsed .admin-sidebar {
+  width: 64px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 64px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+
+  .brand-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .brand-text {
+    color: #2d3748;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+}
+
+.toggle-btn {
+  background: #f7fafc;
+  border: none;
+  color: #718096;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  &:hover { background: #e2e8f0; color: #2d3748; }
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+
+  .nav-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .nav-label { overflow: hidden; text-overflow: ellipsis; }
+
+  &:hover {
+    background: #f7fafc;
+    color: #2d3748;
+  }
+
+  &.active {
+    background: #ebf8ff;
+    color: #4299e1;
+    border: 1px solid #bee3f8;
+  }
+}
+
+.sidebar-footer {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .admin-avatar { font-size: 1.5rem; flex-shrink: 0; }
+
+  p { margin: 0; }
+  .admin-name { color: #2d3748; font-size: 0.85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .admin-role { color: #718096; font-size: 0.75rem; }
+}
+
+.btn-exit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.875rem;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: #718096;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:hover { background: #e2e8f0; color: #2d3748; }
+}
+
+// ── Main Content ───────────────────────────────────────────────────────────
+.admin-main {
+  flex: 1;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-layout.sidebar-collapsed .admin-main {
+  margin-left: 64px;
+}
+
+.admin-topbar {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  .page-title {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-badge {
+  background: rgba(233,69,96,0.15);
+  border: 1px solid rgba(233,69,96,0.3);
+  color: #e94560;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-logout {
+  background: rgba(233,69,96,0.15);
+  border: 1px solid rgba(233,69,96,0.3);
+  color: #e94560;
+  padding: 0.4rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover { background: #e94560; color: white; }
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar { width: 64px; }
+  .admin-main { margin-left: 64px; }
+  .sidebar-brand .brand-text,
+  .nav-label,
+  .admin-info div,
+  .btn-exit span:last-child { display: none; }
+}
